@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "WaCleaner",
+  "version": "1.1.1",
+  "description": "Uma extensão que limpa todo tipo de arquivo do WhatsApp",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "wacleaner@lucassiqueira.dev",
+      "strict_min_version": "115.0",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
+    }
+  },
+  "icons": {
+    "48": "assets/favicon.png"
+  },
+  "action": {
+    "default_icon": "assets/favicon.png",
+    "default_title": "WaCleaner",
+    "default_popup": "sidebar/sidebar.html"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": [
+    "tabs",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://web.whatsapp.com/*"
+  ]
+}
