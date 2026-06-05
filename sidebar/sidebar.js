@@ -1,5 +1,3 @@
-const clean = document.getElementById('cleanWhatsApp');
-
 function getCleaningOptions() {
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
     let cleaningOptions = [];
@@ -12,8 +10,24 @@ function getCleaningOptions() {
     
     return cleaningOptions;
 }
-clean.addEventListener('click', () => {
-    const options = getCleaningOptions();
 
-    browser.runtime.sendMessage({action: "startCleaning", payload: options});
-});
+const cleanLoaded = document.getElementById('cleanLoaded');
+const cleanAll = document.getElementById('cleanAll');
+
+function cleanEventListeners() {
+    cleanLoaded.addEventListener('click', () => {
+        const options = getCleaningOptions();
+    
+        browser.runtime.sendMessage({action: "startCleaning", payload: options, type: "partial"});
+    });
+
+    cleanAll.addEventListener('click', () => {
+        const options = getCleaningOptions();
+
+        browser.runtime.sendMessage({action: "startCleaning", payload: options, type: "full"})
+    })
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    cleanEventListeners();
+})

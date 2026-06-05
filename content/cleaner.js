@@ -24,6 +24,8 @@ async function scrollUp() {
         container.scrollTop = 0;
         await sleep(800);
     }
+
+    return;
 }
 
 async function scrollDown(options) {
@@ -32,8 +34,7 @@ async function scrollDown(options) {
 
     const container = findScrollable();
     if (!container) return;
-    
-    
+
     while (container.scrollTop + container.clientHeight < container.scrollHeight - 10) {
         container.scrollBy(0, 1000);
         await sleep(600);
@@ -228,22 +229,34 @@ function removeHider() {
 
 }
 
-async function main(options) {
-    console.warn("[WaCleaner] Limpeza iniciada");
-    
+async function main(options, type) {
     await injectHider();
 
-    await scrollUp();
-    await sleep(300);
-    await openSelection();
-    await sleep(200);
-    await scrollDown(options);
-    await sleep(300);
+    if (type == "full") {
+        console.warn("[WACleaner] Início da limpeza completa")
+
+        await scrollUp();
+        await sleep(300);
+        await openSelection();
+        await sleep(200);
+        await scrollDown(options);
+        await sleep(300);
+
+        console.warn("[WACleaner] Fim da limpeza completa")
+    } else {
+        console.warn("[WACleaner] Início da limpeza parcial")
+        
+        await openSelection();
+        await sleep(200);
+        await checkThings(options);
+        await sleep(300);        
+
+        console.warn("[WACleaner] Fim da limpeza parcial")
+    }
+    
     await deleteImages();
 
     setTimeout(async () => {
         await removeHider();
     }, 500);
-
-    console.warn("[WaCleaner] Limpeza finalizada");
 }
