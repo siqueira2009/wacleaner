@@ -1,5 +1,5 @@
 
-> -
+
 > ## AVISO LEGAL - LEIA ANTES DE USAR
 >
 > Esta extensão é fornecida "no estado em que se encontra" (*as is*), sem qualquer garantia, expressa ou implícita. O autor não se responsabiliza por perdas, exclusões de dados, danos diretos ou indiretos resultantes do uso desta ferramenta. O usuário é o único responsável pelas ações executadas através da extensão, incluindo eventuais exclusões permanentes de conteúdo. Além disso, por depender da estrutura interna do WhatsApp Web, a extensão pode deixar de funcionar a qualquer momento em razão de alterações realizadas pelo WhatsApp, sem aviso prévio e sem garantia de correção ou compatibilidade futura.
