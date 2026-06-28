@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <h1 align="center">WaCleaner V1.0</h1>
+  <h1 align="center">WaCleaner V1.2</h1>
   <strong>Uma extensão para Firefox que limpa em massa arquivos de conversas do WhatsApp Web.</strong>
 </p>
 
