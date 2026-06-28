@@ -12,29 +12,41 @@
     <section id="cleaningOptions">
       <h1 id="title"><span>Wa</span>Cleaner</h1>
       <div class="checkboxContainer">
-        <input value="image" type="checkbox" name="images" id="cleanImagesCheck">
+        <input value="image" type="checkbox" name="images" id="cleanImagesCheck" class="cleanOption">
         <label for="images">Imagens</label>
       </div>
       <div class="checkboxContainer">
-        <input value="document" type="checkbox" name="documents" id="cleanDocumentsCheck">
+        <input value="document" type="checkbox" name="documents" id="cleanDocumentsCheck" class="cleanOption">
         <label for="documents">Documentos</label>
       </div>
       <div class="checkboxContainer">
-        <input value="link" type="checkbox" name="links" id="cleanLinksCheck">
+        <input value="link" type="checkbox" name="links" id="cleanLinksCheck" class="cleanOption">
         <label for="links">Links</label>
       </div>
       <div class="checkboxContainer">
-        <input value="sticker" type="checkbox" name="stickers" id="cleanStickersCheck">
+        <input value="sticker" type="checkbox" name="stickers" id="cleanStickersCheck" class="cleanOption">
         <label for="stickers">Figurinhas</label>
       </div>
       <div class="checkboxContainer">
-        <input value="audio" type="checkbox" name="audios" id="cleanAudiosCheck">
+        <input value="audio" type="checkbox" name="audios" id="cleanAudiosCheck" class="cleanOption">
         <label for="audios">Áudios</label>
+      </div>
+      <div class="checkboxContainer">
+        <input value="video" type="checkbox" name="videos" id="cleanAudiosCheck" class="cleanOption">
+        <label for="videos">Vídeos</label>
+      </div>
+      
+      <hr/>
+
+      <div class="checkboxContainer">
+        <input value="all" type="checkbox" name="all" id="selectAll">
+        <label for="all">Selecionar todos</label>
       </div>
     </section>
 
     <section id="buttons">
-      <button id="cleanWhatsApp" type="button">Limpar conversa atual</button>
+      <button id="cleanLoaded" type="button">Fazer limpeza simples</button>
+      <button id="cleanAll" type="button">Fazer limpeza profunda</button>
 
       <h4 style="font-weight: 500;">Feito com ❤️ por <a href="https://www.linkedin.com/in/lucasdesouzasiqueira/">Lucas Siqueira</a></h4>
     </section>

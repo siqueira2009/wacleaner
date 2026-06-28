@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "WaCleaner",
-  "version": "1.0",
+  "version": "1.2",
   "description": "Uma extensão que limpa todo tipo de arquivo do WhatsApp",
   "browser_specific_settings": {
     "gecko": {

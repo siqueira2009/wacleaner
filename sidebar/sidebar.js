@@ -1,7 +1,5 @@
-const clean = document.getElementById('cleanWhatsApp');
-
 function getCleaningOptions() {
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const checkboxes = document.querySelectorAll('input[type="checkbox"].cleanOption');
     let cleaningOptions = [];
 
     checkboxes.forEach(checkbox => {
@@ -12,8 +10,42 @@ function getCleaningOptions() {
     
     return cleaningOptions;
 }
-clean.addEventListener('click', () => {
-    const options = getCleaningOptions();
 
-    browser.runtime.sendMessage({action: "startCleaning", payload: options});
-});
+function selectAll() {
+    const checkboxes = document.querySelectorAll('input[type="checkbox"].cleanOption');
+    const allCheckbox = document.getElementById('selectAll');
+
+    if (allCheckbox.checked) {
+        checkboxes.forEach(checkbox => {
+            checkbox.checked = true;
+        });
+    } else {
+        checkboxes.forEach(checkbox => {
+            checkbox.checked = false;
+        });
+    }
+}
+
+const cleanLoaded = document.getElementById('cleanLoaded');
+const cleanAll = document.getElementById('cleanAll');
+const allCheckbox = document.getElementById('selectAll');
+
+function cleanEventListeners() {
+    cleanLoaded.addEventListener('click', () => {
+        const options = getCleaningOptions();
+    
+        browser.runtime.sendMessage({action: "startCleaning", payload: options, type: "partial"});
+    });
+
+    cleanAll.addEventListener('click', () => {
+        const options = getCleaningOptions();
+
+        browser.runtime.sendMessage({action: "startCleaning", payload: options, type: "full"})
+    });
+
+    allCheckbox.addEventListener('change', selectAll);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    cleanEventListeners();
+})

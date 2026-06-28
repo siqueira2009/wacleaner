@@ -111,3 +111,9 @@ main {
     background-color: #128c7e;
     transition: width 0.3s cubic-bezier();
 }
+
+hr {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #128c7e;
+}
